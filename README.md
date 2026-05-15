@@ -1,13 +1,13 @@
 # PostgreSQLPlayground
 
-## Run locally from Docker imgae
+## Run locally from Docker image
 
 `docker run --name test-postgress -p 5432:5432 -e POSTGRES_PASSWORD=playgroundpass -d postgres:13.3`
 
 PGAdmin
 
 
-Create migration (for example from PackageManager console
+Create migration (for example from PackageManager console)
 ```
 PM> add-migration Initial
 Build started...
