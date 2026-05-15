@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PostgreSqlPlayground": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
