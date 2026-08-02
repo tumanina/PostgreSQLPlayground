@@ -1,4 +1,4 @@
-﻿namespace PostgreSqlPlayground;
+﻿namespace PostgreSqlPlayground.Database.Entities;
 
 public enum EventType
 {

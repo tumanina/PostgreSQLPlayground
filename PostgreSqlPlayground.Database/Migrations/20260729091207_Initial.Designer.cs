@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PostgreSqlPlayground;
+using PostgreSqlPlayground.Database;
 
 #nullable disable
 
-namespace PostgreSqlPlayground.Migrations
+namespace PostgreSqlPlayground.Database.Migrations
 {
-    [DbContext(typeof(WebhooksContext))]
-    [Migration("20260331184355_Initial")]
+    [DbContext(typeof(PlaygroundContext))]
+    [Migration("20260729091207_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,30 +20,12 @@ namespace PostgreSqlPlayground.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.5")
+                .HasAnnotation("ProductVersion", "10.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PostgreSqlPlayground.EventToProcess", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("EventBody")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("EventEntity")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EventsToProcess");
-                });
-
-            modelBuilder.Entity("PostgreSqlPlayground.History", b =>
+            modelBuilder.Entity("PostgreSqlPlayground.Database.Entities.HistoryEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +67,7 @@ namespace PostgreSqlPlayground.Migrations
                     b.ToTable("History");
                 });
 
-            modelBuilder.Entity("PostgreSqlPlayground.Subscription", b =>
+            modelBuilder.Entity("PostgreSqlPlayground.Database.Entities.SubscriptionEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

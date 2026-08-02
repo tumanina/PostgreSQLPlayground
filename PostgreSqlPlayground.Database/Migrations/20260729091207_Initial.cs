@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PostgreSqlPlayground.Migrations
+namespace PostgreSqlPlayground.Database.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -66,9 +66,6 @@ namespace PostgreSqlPlayground.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "EventsToProcess");
-
             migrationBuilder.DropTable(
                 name: "History");
 

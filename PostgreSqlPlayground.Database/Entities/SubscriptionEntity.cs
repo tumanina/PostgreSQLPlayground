@@ -1,6 +1,6 @@
-﻿namespace PostgreSqlPlayground;
+﻿namespace PostgreSqlPlayground.Database.Entities;
 
-public class Subscription
+public class SubscriptionEntity
 {
     /// <summary>
     /// Unique identifier of the subscription

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PostgreSqlPlayground;
+using PostgreSqlPlayground.Database;
 
 var connectionString = "Host=localhost;Port=5432;Database=playgrounddb;Username=postgres;Password=pgpwd4habr";
 var builder = new DbContextOptionsBuilder<DbContext>();
@@ -12,5 +12,5 @@ builder.EnableSensitiveDataLogging()
                          opts.EnableRetryOnFailure();
                      });
 
-var dbContext = new WebhooksContext(builder.Options);
+var dbContext = new PlaygroundContext(builder.Options);
 dbContext.Database.Migrate();

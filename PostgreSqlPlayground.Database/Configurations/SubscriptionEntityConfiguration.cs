@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PostgreSqlPlayground;
+using PostgreSqlPlayground.Database.Entities;
 
 namespace PostgreSqlPlayground.Configurations;
 
-internal class SubscriptionConfiguration: IEntityTypeConfiguration<Subscription>
+internal class SubscriptionEntityConfiguration: IEntityTypeConfiguration<SubscriptionEntity>
 {
-    public void Configure(EntityTypeBuilder<Subscription> builder)
+    public void Configure(EntityTypeBuilder<SubscriptionEntity> builder)
     {
         builder.Property(e => e.EventType).HasConversion<string>();
         builder.HasIndex(u => new { u.Tenant, u.EventType });

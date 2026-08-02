@@ -1,11 +1,11 @@
-﻿namespace PostgreSqlPlayground;
+﻿namespace PostgreSqlPlayground.Database.Entities;
 
-public class History
+public class HistoryEntity
 {
-    public History()
+    public HistoryEntity()
     { }
 
-    public History(string tenant, EventType eventType, string endpointUrl, string payload, int responseStatus, string response)
+    public HistoryEntity(string tenant, EventType eventType, string endpointUrl, string payload, int responseStatus, string response)
     {
         Id = Guid.NewGuid();
         Tenant = tenant;
