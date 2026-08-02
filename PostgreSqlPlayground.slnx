@@ -2,5 +2,7 @@
   <Project Path="ConcurrencyTest.FirstApp/ConcurrencyTest.FirstApp.csproj" Id="54dd8165-cb70-48d2-9a56-86b7b46d62fd" />
   <Project Path="ConcurrencyTest.SecondApp/ConcurrencyTest.SecondApp.csproj" Id="147424ea-cf3d-47cf-a766-6841f75df0ff" />
   <Project Path="Deployments.Api/Deployments.Api.csproj" Id="3227c477-f113-459b-96ec-0b22130bd0e7" />
+  <Project Path="Listener/Publisher.Listener.csproj" Id="cbd14c3f-3f59-4070-903c-67ffa6472866" />
   <Project Path="PostgreSqlPlayground.Database\PostgreSqlPlayground.Database.csproj" />
+  <Project Path="Sender/Publisher.Sender.csproj" Id="60695740-7de7-4241-a059-813fb4831fa2" />
 </Solution>
