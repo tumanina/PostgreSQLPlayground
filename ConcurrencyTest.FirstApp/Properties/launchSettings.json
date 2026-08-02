@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConcurrencyTest.FirstApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

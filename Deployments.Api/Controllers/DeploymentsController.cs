@@ -5,7 +5,7 @@ using Deployments.Api.Models;
 namespace Deployments.Api.Controllers
 {
     [ApiController]
-    [Route("deplyments")]
+    [Route("deployments")]
     public class DeploymentsController(IDeploymentHistoryService historyService) : ControllerBase
     {
         private readonly IDeploymentHistoryService _historyService = historyService;
