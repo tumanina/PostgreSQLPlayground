@@ -1,10 +1,17 @@
-# PostgreSql Feature
+# PostgreSql Features
 
 ## Jsonb
 
 JSONB (JSON Binary) is a PostgreSQL data type that stores JSON documents in a binary format. Unlike the JSON type, it supports efficient indexing, fast querying, and a rich set of operators for searching and manipulating JSON data.
 
 The main advantage of JSONB is its ability to store flexible, evolving data structures without requiring frequent database schema changes, while still allowing efficient queries against individual document fields.
+
+<img width="925" height="384" alt="image" src="https://github.com/user-attachments/assets/28bcc444-8659-4996-8792-389d8b5bc87f" />
+
+`DeploymentHistory.Where(d => d.Settings.Kafka.Topic == topic)`
+
+<img width="1878" height="798" alt="image" src="https://github.com/user-attachments/assets/d0195fcf-a010-440f-9071-b2a8194295d5" />
+
 
 ## Concurrency
 
