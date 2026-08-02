@@ -15,6 +15,14 @@ The main advantage of JSONB is its ability to store flexible, evolving data stru
 
 ## Concurrency
 
+### Optimistic Concurrency (xmin)
+
+PostgreSQL provides optimistic concurrency through the system column xmin, which is automatically updated every time a row is modified. EF Core can use xmin as a concurrency token, including it in the WHERE clause of UPDATE statements. If another transaction has already modified the row, the update affects zero rows and EF Core throws a DbUpdateConcurrencyException.
+
+### Pessimistic Concurrency (FOR UPDATE)
+
+Pessimistic concurrency prevents conflicts by locking rows before they are modified. PostgreSQL provides this through SELECT ... FOR UPDATE, ensuring that selected rows cannot be updated by other transactions until the current transaction completes. 
+Additional options such as NOWAIT (fail immediately if the row is locked) and SKIP LOCKED (skip locked rows instead of waiting) make it ideal for scalable work queues, Inbox/Outbox implementations, and distributed background workers.
 
 ## MVCC
 
