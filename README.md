@@ -26,7 +26,12 @@ PostgreSQL provides optimistic concurrency through the system column xmin, which
 Pessimistic concurrency prevents conflicts by locking rows before they are modified. PostgreSQL provides this through SELECT ... FOR UPDATE, ensuring that selected rows cannot be updated by other transactions until the current transaction completes. 
 Additional options such as NOWAIT (fail immediately if the row is locked) and SKIP LOCKED (skip locked rows instead of waiting) make it ideal for scalable work queues, Inbox/Outbox implementations, and distributed background workers.
 
-<img width="1348" height="878" alt="image" src="https://github.com/user-attachments/assets/067c0644-7537-447e-9014-d731651f77d6" />
+### LISTEN / NOTIFY
+
+PostgreSQL's LISTEN/NOTIFY provides a lightweight publish/subscribe mechanism that allows applications to receive real-time notifications without polling the database. 
+It is commonly used to wake up background workers or notify services that new data is available, reducing unnecessary database queries. Since notifications are not persisted or guaranteed, they are typically used as a signal to query the database rather than as a reliable messaging system.
+
+<img width="672" height="350" alt="image" src="https://github.com/user-attachments/assets/dbbdf8f4-9a42-4674-bdff-f85694d18b75" />
 
 
 ## MVCC
