@@ -10,7 +10,7 @@ The main advantage of JSONB is its ability to store flexible, evolving data stru
 
 `DeploymentHistory.Where(d => d.Settings.Kafka.Topic == topic)`
 
-<img width="1878" height="798" alt="image" src="https://github.com/user-attachments/assets/d0195fcf-a010-440f-9071-b2a8194295d5" />
+<img width="925" height="399" alt="image" src="https://github.com/user-attachments/assets/d0195fcf-a010-440f-9071-b2a8194295d5" />
 
 
 ## Concurrency
@@ -19,10 +19,15 @@ The main advantage of JSONB is its ability to store flexible, evolving data stru
 
 PostgreSQL provides optimistic concurrency through the system column xmin, which is automatically updated every time a row is modified. EF Core can use xmin as a concurrency token, including it in the WHERE clause of UPDATE statements. If another transaction has already modified the row, the update affects zero rows and EF Core throws a DbUpdateConcurrencyException.
 
+<img width="674" height="320" alt="image" src="https://github.com/user-attachments/assets/b974b969-fe46-4c48-a7e7-3419d3f7d708" />
+
 ### Pessimistic Concurrency (FOR UPDATE)
 
 Pessimistic concurrency prevents conflicts by locking rows before they are modified. PostgreSQL provides this through SELECT ... FOR UPDATE, ensuring that selected rows cannot be updated by other transactions until the current transaction completes. 
 Additional options such as NOWAIT (fail immediately if the row is locked) and SKIP LOCKED (skip locked rows instead of waiting) make it ideal for scalable work queues, Inbox/Outbox implementations, and distributed background workers.
+
+<img width="1348" height="878" alt="image" src="https://github.com/user-attachments/assets/067c0644-7537-447e-9014-d731651f77d6" />
+
 
 ## MVCC
 
